@@ -17,17 +17,25 @@ Situs statis berisi data organisasi, mahasiswa, dan acara di UII untuk keputusan
 
 Catatan akses: repo publik berarti situsnya bisa dibuka siapa saja yang punya link. Hosting dengan kata sandi (misalnya GitHub Pages dari repo privat, Cloudflare Pages dengan Access, atau Netlify) umumnya butuh paket berbayar atau pengaturan tambahan, jadi cek ketentuan terbarunya di masing-masing layanan.
 
-## Mengubah atau menambah data
+## Mengubah atau menambah data (lewat Google Sheets)
 
-1. Buka folder `data` di repo, klik file CSV yang mau diubah, lalu klik ikon pensil.
-2. Edit baris yang ada, atau tambah baris baru di paling bawah dengan kolom yang sama persis.
-3. Klik Commit changes. Situs diperbarui dalam satu sampai dua menit.
+Situs membaca data dari spreadsheet "Data Peta Pasar UII" di Google Sheets. Tim cukup mengedit di sana, tanpa membuka GitHub.
 
-Tips:
-- Kolom `id` harus unik di tiap file (misalnya `ORG-076` untuk baris organisasi berikutnya).
+1. Buka spreadsheet, pilih tab yang mau diubah (`organisasi`, `mahasiswa`, `acara_gor`, atau `celah`).
+2. Ubah isi sel, atau tambah baris baru di bawah baris terakhir dengan kolom yang sama.
+3. Tunggu sekitar 5 menit. Lalu buka situs dan tekan Ctrl + F5.
+
+Aturan:
+- Jangan mengubah, menghapus, atau memindah baris judul (baris 1) dan urutan kolom.
+- Kolom `id` harus unik di tiap tab (misalnya `ORG-076` setelah `ORG-075`).
 - Isi `status_ig` dengan salah satu dari: `Terverifikasi`, `Belum terverifikasi`, `Belum ditemukan`.
-- Sel yang berisi koma harus diberi tanda kutip ganda. Lebih aman mengedit di Google Sheets atau Excel, lalu simpan sebagai CSV UTF-8.
 - Link (`ig_url`, `sumber_url`) harus diawali `https://`.
+- Jangan menghapus tab atau mengganti namanya.
+- Kalau mengetik tanggal, tulis sebagai teks biasa, misalnya `2 Sep 2025`. Kolom `tanggal_mulai` ditulis `2025-09-02`. Kalau Sheets mengubahnya jadi format tanggal otomatis, klik sel itu lalu Format → Angka → Teks biasa sebelum mengetik.
+
+Siapa yang boleh mengedit diatur lewat tombol Share di Google Sheets. Isi tab yang dipublikasikan bisa dibaca siapa pun yang punya linknya.
+
+Cadangan: kalau Google Sheets tidak bisa dibaca, situs memakai file di folder `data/` (CSV). File itu tidak ikut berubah saat Sheets diedit, jadi perbarui juga kalau perlu.
 
 ## Menyembunyikan bagian internal
 

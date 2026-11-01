@@ -5,6 +5,15 @@
     tampilkanCelah: true    // bagian "Yang masih kosong"
   };
 
+  // Sumber data: Google Sheets yang dipublikasikan sebagai CSV.
+  // Kalau sebuah link gagal dimuat, situs otomatis memakai file cadangan di folder data/.
+  const SUMBER = {
+    organisasi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFP5cy7LShoEHwAfkEDFeECLqPDvVaVCqlHP3nBdnnEQunctUpqvLNK3why2jC07HvnTiOkkYV0DM/pub?gid=1217287984&single=true&output=csv',
+    mahasiswa: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFP5cy7LShoEHwAfkEDFeECLqPDvVaVCqlHP3nBdnnEQunctUpqvLNK3why2jC07HvnTiOkkYV0DM/pub?gid=312049306&single=true&output=csv',
+    acara_gor: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFP5cy7LShoEHwAfkEDFeECLqPDvVaVCqlHP3nBdnnEQunctUpqvLNK3why2jC07HvnTiOkkYV0DM/pub?gid=1593920444&single=true&output=csv',
+    celah: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFP5cy7LShoEHwAfkEDFeECLqPDvVaVCqlHP3nBdnnEQunctUpqvLNK3why2jC07HvnTiOkkYV0DM/pub?gid=1338886241&single=true&output=csv'
+  };
+
   const nf = new Intl.NumberFormat('id-ID');
   const pctf = new Intl.NumberFormat('id-ID', {style: 'percent', maximumFractionDigits: 1});
   const deltaf = new Intl.NumberFormat('id-ID', {style: 'percent', maximumFractionDigits: 1, signDisplay: 'always'});
@@ -41,10 +50,19 @@
       .map((r) => Object.fromEntries(head.map((h, i) => [h, (r[i] == null ? '' : r[i]).trim()])));
   }
 
+  const fetchRows = async (url, minCols) => {
+    const res = await fetch(url, {cache: 'no-cache'});
+    if (!res.ok) throw new Error('Gagal memuat ' + url);
+    const rows = parseCSV(await res.text());
+    if (!rows.length || Object.keys(rows[0]).length < minCols || !('id' in rows[0])) throw new Error('Isi tidak sesuai: ' + url);
+    return rows;
+  };
+
   const load = async (name) => {
-    const res = await fetch('data/' + name + '.csv', {cache: 'no-cache'});
-    if (!res.ok) throw new Error('Gagal memuat ' + name);
-    return parseCSV(await res.text());
+    if (SUMBER[name]) {
+      try { return await fetchRows(SUMBER[name], 4); } catch (e) { /* pakai cadangan */ }
+    }
+    return fetchRows('data/' + name + '.csv', 4);
   };
 
   function buildHead(table, cols) {
