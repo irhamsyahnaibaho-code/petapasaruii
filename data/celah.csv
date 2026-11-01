@@ -1,0 +1,11 @@
+﻿id,bidang,kebutuhan,cara_memperoleh,prioritas,status
+TODO-01,Mahasiswa,Jumlah mahasiswa aktif per fakultas dan per prodi,"Tidak dipublikasikan UII. Minta ke Direktorat Layanan Akademik atau Ditmawa, atau cek PDDikti per prodi.",Tinggi,Belum
+TODO-02,Fakultas,"Konfirmasi jumlah fakultas (8 atau 9, setelah FPSB terpisah)",Cek halaman program pendidikan di uii.ac.id.,Tinggi,Belum
+TODO-03,Himpunan,Daftar lengkap himpunan semua prodi beserta IG,Telusuri situs tiap fakultas dan IG fakultas; satu himpunan per prodi.,Tinggi,Belum
+TODO-04,GOR,Rekap lengkap peminjaman GOR UII 2025,"Minta ke Direktorat Sarana dan Prasarana (ext 1218), atau kirim tangkapan layar kalender di dsp.uii.ac.id/gor-uii.",Tinggi,Belum
+TODO-05,Instagram,IG 7 fakultas yang belum ketemu,Buka situs masing-masing fakultas atau cari manual di Instagram.,Sedang,Belum
+TODO-06,Instagram,IG LEM UII dan LEM tiap fakultas,Tanya langsung ke pengurus atau cek IG Ditmawa.,Sedang,Belum
+TODO-07,Instagram,IG 8 LPM fakultas (baru ada situs web),Cari manual di Instagram.,Rendah,Belum
+TODO-08,Instagram,IG KAMMI UII dan Sedekah Sekitar,Cari manual atau tanya kenalan di organisasinya.,Sedang,Belum
+TODO-09,Verifikasi,"Cek manual IG berstatus belum terverifikasi (aktif atau tidak, jumlah pengikut)","Buka satu per satu, lalu kabari Frend untuk diperbarui.",Sedang,Belum
+TODO-10,Data tambahan,"Pengikut dan aktivitas tiap IG, untuk menentukan prioritas target",Catat manual atau kirim tangkapan layar; kolom ini bisa ditambah.,Rendah,Belum

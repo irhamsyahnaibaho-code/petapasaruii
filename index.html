@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peta Pasar Kampus UII · Dopamilk</title>
+<meta name="description" content="Data organisasi, mahasiswa, dan acara di UII sebagai dasar keputusan marketing Dopamilk.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="eyebrow">Dopamilk · data marketing</p>
+      <h1>Peta Pasar <span class="pill">Kampus UII</span></h1>
+      <p class="lede">
+        Mahasiswa aktif UII tercatat <b id="lede-mhs">—</b> orang (<span id="lede-periode">—</span>).
+        Di halaman ini sudah terdaftar <b id="lede-org">—</b> organisasi dan fakultas,
+        <b id="lede-ig">—</b> di antaranya dengan IG terverifikasi.
+        Pakai daftar ini untuk memilih siapa yang didekati lebih dulu.
+      </p>
+      <nav class="jump" aria-label="Loncat ke bagian">
+        <a href="#organisasi">Organisasi</a>
+        <a href="#mahasiswa">Mahasiswa</a>
+        <a href="#gor">Acara GOR</a>
+        <a href="#celah" id="nav-celah">Yang masih kosong</a>
+      </nav>
+    </div>
+    <img class="hero-logo" src="assets/logo-dopamilk.png" alt="Logo Dopamilk: sapi bertopi sedang minum susu" width="640" height="808">
+  </div>
+</header>
+
+<main class="wrap">
+  <p id="galat" class="galat" hidden></p>
+
+  <section id="organisasi" aria-labelledby="h-org">
+    <h2 id="h-org">Organisasi dan fakultas</h2>
+    <p class="note">Klik salah satu kartu untuk menyaring daftar. IG berstatus "Terverifikasi" tercantum di halaman resmi UII atau situs fakultas; yang lain masih perlu dicek manual.</p>
+    <div class="tiles" id="tiles"></div>
+    <div class="tools">
+      <input id="cari" class="q" type="search" placeholder="Cari nama, fakultas, atau akun IG" aria-label="Cari organisasi">
+      <button id="semua" class="btn" hidden>Tampilkan semua</button>
+    </div>
+    <div class="tablebox">
+      <table id="tabel-org"><thead></thead><tbody></tbody></table>
+      <p id="org-kosong" class="empty" hidden>Tidak ada yang cocok dengan pencarian ini.</p>
+    </div>
+    <p class="note">Daftar ini baru yang berhasil ditemukan dari sumber publik. Yang kosong sedang dikerjakan, lihat bagian "Yang masih kosong".</p>
+  </section>
+
+  <section id="mahasiswa" aria-labelledby="h-mhs">
+    <h2 id="h-mhs">Mahasiswa aktif</h2>
+    <p class="note">Angka gabungan seluruh UII dari laporan resmi. Rincian per fakultas dan per prodi tidak dipublikasikan, jadi belum ada di sini.</p>
+    <div class="stats">
+      <div class="stat"><span class="lab">Mahasiswa aktif, <span id="st-aktif-periode">—</span></span><span class="big" id="st-aktif">—</span></div>
+      <div class="stat"><span class="lab">Mahasiswa baru <span id="st-maba-label">—</span></span><span class="big" id="st-maba">—</span><span class="sub"><span id="st-maba-delta">—</span> dari angkatan sebelumnya</span></div>
+      <div class="stat"><span class="lab">Porsi jenjang S1</span><span class="big" id="st-s1">—</span><span class="sub">dari seluruh mahasiswa aktif</span></div>
+      <div class="stat"><span class="lab">Program studi</span><span class="big" id="st-prodi">—</span><span class="sub"><span id="st-unggul">—</span> berakreditasi Unggul</span></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Mahasiswa aktif per jenjang</h3>
+        <p class="note">Posisi Desember 2024. Sarjana jadi pasar utama.</p>
+        <div class="bars" id="grafik-jenjang"></div>
+      </div>
+      <div class="card">
+        <h3>Mahasiswa baru per angkatan</h3>
+        <p class="note">Pintu masuk terbaik untuk sampling: mereka belum punya kebiasaan jajan di kampus.</p>
+        <div class="bars" id="grafik-maba"></div>
+      </div>
+    </div>
+    <p class="note">Sumber: laporan perkembangan dan kinerja UII serta berita penerimaan mahasiswa baru. Angka 2023 dan 2024 berasal dari dua laporan yang cara hitungnya bisa berbeda, jadi jangan dibaca sebagai tren.</p>
+  </section>
+
+  <section id="gor" aria-labelledby="h-gor">
+    <h2 id="h-gor">Acara di GOR UII</h2>
+    <p class="note" id="note-gor">Rekap awal dari berita dan situs UII, belum dari data peminjaman GOR.</p>
+    <div class="tablebox">
+      <table id="tabel-gor"><thead></thead><tbody></tbody></table>
+    </div>
+    <p class="note">Rekap lengkap peminjaman 2025 perlu diminta ke pengelola GOR; tabel ini bertambah begitu datanya ada.</p>
+  </section>
+
+  <section id="celah" aria-labelledby="h-celah">
+    <h2 id="h-celah">Yang masih kosong</h2>
+    <p class="note">Data yang belum bisa dipastikan dari sumber publik, dan jalur untuk mendapatkannya.</p>
+    <div class="tablebox">
+      <table id="tabel-celah"><thead></thead><tbody></tbody></table>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><b>Dopamilk</b> · mengembalikan moooad</p>
+    <p class="note">Data publik dari uii.ac.id, kemahasiswaan.uii.ac.id, dan Instagram. Dikumpulkan tim Dopamilk.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
