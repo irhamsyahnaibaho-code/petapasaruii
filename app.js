@@ -130,6 +130,15 @@
     const m02 = by('m02');
     if (m02) { setText('#lede-mhs', nf.format(m02.jumlah)); setText('#lede-periode', m02.periode); }
 
+    // Kalau satu bagian gagal, bagian lain tetap tampil dan pesan galat muncul di bagian itu.
+    const safe = (fn, sel) => {
+      try { fn(); } catch (e) {
+        console.error(e);
+        const s = $(sel);
+        if (s) s.append(mk('p', 'galat', 'Bagian ini gagal dimuat: ' + e.message));
+      }
+    };
+
     function filterable(o) {
       const state = {grup: 'Semua', q: ''};
       const tilesBox = $(o.tiles), cariEl = $(o.cari), semuaEl = $(o.semua), emptyEl = $(o.kosong), table = $(o.table);
@@ -159,7 +168,7 @@
       render();
     }
 
-    filterable({
+    safe(() => filterable({
       data: org, key: 'kelompok', grup: ['Fakultas', 'Himpunan Prodi', 'LEM', 'UKM Universitas', 'UKM Fakultas', 'Organisasi Eksternal'],
       labels: {'Himpunan Prodi': 'Himpunan prodi', 'UKM Universitas': 'UKM universitas', 'UKM Fakultas': 'UKM fakultas', 'Organisasi Eksternal': 'Organisasi eksternal'},
       sub: (rows) => nf.format(rows.filter(ok).length) + ' IG terverifikasi',
@@ -171,9 +180,9 @@
         {key: 'ig_handle', label: 'Instagram', link: 'ig_url'}, {key: 'status_ig', label: 'Status IG', chip: true},
         {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
       ]
-    });
+    }), '#organisasi');
 
-    filterable({
+    safe(() => filterable({
       data: prodi, key: 'jenjang', grup: ['Sarjana', 'Sarjana Terapan', 'Diploma Tiga', 'Profesi', 'Magister', 'Doktor'],
       labels: {'Sarjana Terapan': 'Sarjana terapan', 'Diploma Tiga': 'Diploma tiga'},
       tiles: '#tiles-prodi', cari: '#cari-prodi', semua: '#semua-prodi', kosong: '#prodi-kosong', table: '#tabel-prodi',
@@ -182,9 +191,10 @@
         {key: 'id', label: 'ID'}, {key: 'fakultas', label: 'Fakultas'}, {key: 'jenjang', label: 'Jenjang'},
         {key: 'prodi', label: 'Program studi'}, {key: 'program_internasional', label: 'Program internasional'},
         {key: 'website', label: 'Situs', link: 'website_url'},
+        {key: 'ig_handle', label: 'Instagram', link: 'ig_url'}, {key: 'status_ig', label: 'Status IG', chip: true},
         {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
       ]
-    });
+    }), '#prodi');
     setText('#prodi-tercatat', nf.format(prodi.length));
     const m12p = by('m12');
     if (m12p) setText('#prodi-resmi', nf.format(m12p.jumlah));
@@ -195,9 +205,11 @@
       {key: 'ig_handle', label: 'Instagram', link: 'ig_url'}, {key: 'status_ig', label: 'Status IG', chip: true},
       {key: 'peran_untuk_dopa', label: 'Kegunaan untuk Dopa'}, {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
     ];
-    const tDir = $('#tabel-dir');
-    buildHead(tDir, dirCols);
-    fillBody(tDir, dirCols, dir);
+    safe(() => {
+      const tDir = $('#tabel-dir');
+      buildHead(tDir, dirCols);
+      fillBody(tDir, dirCols, dir);
+    }, '#direktorat');
 
     // mahasiswa
     const m11 = by('m11'), m10 = by('m10'), m05 = by('m05'), m12 = by('m12'), m13 = by('m13');
@@ -239,5 +251,10 @@
     }
   }
 
-  main();
+  main().catch((e) => {
+    console.error(e);
+    const g = $('#galat');
+    g.hidden = false;
+    g.textContent = 'Terjadi galat saat menampilkan data: ' + e.message;
+  });
 })();

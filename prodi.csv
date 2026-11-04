@@ -1,0 +1,60 @@
+﻿id,fakultas,jenjang,prodi,program_internasional,website,ig_handle,ig_url,status_ig,sumber,sumber_url,catatan
+PRD-001,FBE,Sarjana,Akuntansi,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-002,FBE,Sarjana,Manajemen,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-003,FBE,Sarjana,Ekonomi Pembangunan,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-004,FBE,Sarjana Terapan,Akuntansi Perpajakan,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-005,FBE,Sarjana Terapan,Analisis Keuangan,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-006,FBE,Sarjana Terapan,Bisnis Digital,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-007,FBE,Magister,Manajemen,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-008,FBE,Magister,Akuntansi,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-009,FBE,Magister,Ilmu Ekonomi,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-010,FBE,Doktor,Ilmu Ekonomi,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-011,FBE,Doktor,Manajemen,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-012,FH,Sarjana,Hukum,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-013,FH,Sarjana,Hukum Bisnis,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,"Ada di artikel 2024, tidak ada di halaman PMB terbaru. Perlu dikonfirmasi."
+PRD-014,FH,Magister,Hukum,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-015,FH,Magister,Kenotariatan,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-016,FH,Doktor,Hukum,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-017,FP,Sarjana,Psikologi,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,Dulu bagian FPSB. Pemisahan FP dan FISB (2025) menurut situs FISB.
+PRD-018,FP,Profesi,Profesi Psikologi,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,Dulu bagian FPSB. Perlu dikonfirmasi.
+PRD-019,FISB,Sarjana,Ilmu Komunikasi,Ya,communication.uii.ac.id,@komunikasiuii.official,https://www.instagram.com/komunikasiuii.official/,Terverifikasi,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,IG dari footer situs communication.uii.ac.id.
+PRD-020,FISB,Sarjana,Hubungan Internasional,Ya,ir.uii.ac.id,@intrelationsuii,https://www.instagram.com/intrelationsuii/,Terverifikasi,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,IG dari footer situs ir.uii.ac.id.
+PRD-021,FISB,Sarjana,Pendidikan Bahasa Inggris,Tidak,pbi.uii.ac.id,@pendidikanbahasainggrisuii,https://www.instagram.com/pendidikanbahasainggrisuii/,Terverifikasi,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,IG dari footer situs pbi.uii.ac.id.
+PRD-022,FISB,Magister,Ilmu Komunikasi,,communication.uii.ac.id/magister,,,Belum ditemukan,fisb.uii.ac.id,https://fisb.uii.ac.id/,
+PRD-023,FTI,Sarjana,Teknik Industri,Ya,industrial.uii.ac.id,@industriuii,https://www.instagram.com/industriuii/,Terverifikasi,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,IG dari footer situs industrial.uii.ac.id. Akun jurusan Teknik Industri. Program internasional punya akun sendiri: @industrial.ipuii.
+PRD-024,FTI,Sarjana,Teknik Kimia,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-025,FTI,Sarjana,Teknik Elektro,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-026,FTI,Sarjana,Informatika,Ya,informatics.uii.ac.id,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-027,FTI,Sarjana,Informatika (PJJ),Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,Pembelajaran jarak jauh. Jenjang tidak dilabeli di halaman PMB.
+PRD-028,FTI,Sarjana,Teknik Mesin,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-029,FTI,Sarjana,Rekayasa Tekstil,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-030,FTI,Sarjana,Manajemen Rekayasa,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,Jenjang tidak dilabeli di halaman PMB.
+PRD-031,FTI,Magister,Rekayasa Elektro,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-032,FTI,Magister,Teknik Industri,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-033,FTI,Magister,Teknik Kimia,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-034,FTI,Magister,Informatika,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-035,FTI,Doktor,Rekayasa Industri,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-036,FTSP,Sarjana,Teknik Sipil,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,"Halaman PMB menyebut Fakultas Teknik Desain Inovasi; kemungkinan nama baru FTSP, perlu dikonfirmasi."
+PRD-037,FTSP,Sarjana,Arsitektur,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,"Halaman PMB menyebut Fakultas Teknik Desain Inovasi; kemungkinan nama baru FTSP, perlu dikonfirmasi."
+PRD-038,FTSP,Sarjana,Teknik Lingkungan,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,"Halaman PMB menyebut Fakultas Teknik Desain Inovasi; kemungkinan nama baru FTSP, perlu dikonfirmasi."
+PRD-039,FTSP,Profesi,Profesi Arsitek,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-040,FTSP,Magister,Arsitektur,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-041,FTSP,Magister,Teknik Lingkungan,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-042,FTSP,Magister,Teknik Sipil,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-043,FTSP,Doktor,Teknik Sipil,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-044,FMIPA,Diploma Tiga,Analisis Kimia,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-045,FMIPA,Sarjana,Kimia,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-046,FMIPA,Sarjana,Farmasi,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-047,FMIPA,Sarjana,Statistika,Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-048,FMIPA,Sarjana,Pendidikan Kimia,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-049,FMIPA,Profesi,Profesi Apoteker,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-050,FMIPA,Magister,Kimia,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-051,FMIPA,Magister,Statistika,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-052,FMIPA,Magister,Farmasi,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-053,FK,Sarjana,Kedokteran,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-054,FK,Profesi,Profesi Dokter,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-055,FIAI,Sarjana,Hukum Keluarga (Ahwal Syakhshiyah),Ya,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-056,FIAI,Sarjana,Ekonomi Islam,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-057,FIAI,Sarjana,Pendidikan Agama Islam,Tidak,,,,Belum ditemukan,pmb.uii.ac.id,https://pmb.uii.ac.id/syarat/,
+PRD-058,FIAI,Magister,Ilmu Agama Islam,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
+PRD-059,FIAI,Doktor,Hukum Islam,,,,,Belum ditemukan,"Liputan6, 23 Agu 2024",https://www.liputan6.com/hot/read/5681689/daftar-fakultas-dan-prodi-uii-ketahui-juga-apa-saja-fasilitasnya,
