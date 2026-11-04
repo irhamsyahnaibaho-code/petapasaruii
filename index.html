@@ -26,6 +26,8 @@
       </p>
       <nav class="jump" aria-label="Loncat ke bagian">
         <a href="#organisasi">Organisasi</a>
+        <a href="#prodi">Program studi</a>
+        <a href="#direktorat">Direktorat</a>
         <a href="#mahasiswa">Mahasiswa</a>
         <a href="#gor">Acara GOR</a>
         <a href="#celah" id="nav-celah">Yang masih kosong</a>
@@ -51,6 +53,30 @@
       <p id="org-kosong" class="empty" hidden>Tidak ada yang cocok dengan pencarian ini.</p>
     </div>
     <p class="note">Daftar ini baru yang berhasil ditemukan dari sumber publik. Yang kosong sedang dikerjakan, lihat bagian "Yang masih kosong".</p>
+  </section>
+
+  <section id="prodi" aria-labelledby="h-prodi">
+    <h2 id="h-prodi">Program studi</h2>
+    <p class="note">Program studi UII per fakultas dan jenjang. Klik kartu jenjang untuk menyaring, atau ketik nama fakultas atau prodi di kotak cari. Laporan resmi UII mencatat <b id="prodi-resmi">—</b> program studi, sedangkan daftar ini baru memuat <b id="prodi-tercatat">—</b>. Sisanya sedang dilengkapi.</p>
+    <div class="tiles" id="tiles-prodi"></div>
+    <div class="tools">
+      <input id="cari-prodi" class="q" type="search" placeholder="Cari fakultas atau nama prodi" aria-label="Cari program studi">
+      <button id="semua-prodi" class="btn" hidden>Tampilkan semua</button>
+    </div>
+    <div class="tablebox">
+      <table id="tabel-prodi"><thead></thead><tbody></tbody></table>
+      <p id="prodi-kosong" class="empty" hidden>Tidak ada yang cocok dengan pencarian ini.</p>
+    </div>
+    <p class="note">Kolom program internasional diisi dari halaman penerimaan mahasiswa baru dan hanya untuk jenjang sarjana dan diploma.</p>
+  </section>
+
+  <section id="direktorat" aria-labelledby="h-dir">
+    <h2 id="h-dir">Direktorat UII</h2>
+    <p class="note">Unit di tingkat universitas yang mengatur izin, fasilitas, dan layanan. Kolom terakhir adalah saran tim tentang kegunaannya untuk Dopa, bukan data resmi.</p>
+    <div class="tablebox">
+      <table id="tabel-dir"><thead></thead><tbody></tbody></table>
+    </div>
+    <p class="note">Baru direktorat yang ketemu dari situs resmi. Direktorat lain sedang dilengkapi, lihat bagian "Yang masih kosong".</p>
   </section>
 
   <section id="mahasiswa" aria-labelledby="h-mhs">

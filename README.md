@@ -21,7 +21,7 @@ Catatan akses: repo publik berarti situsnya bisa dibuka siapa saja yang punya li
 
 Situs membaca data dari spreadsheet "Data Peta Pasar UII" di Google Sheets. Tim cukup mengedit di sana, tanpa membuka GitHub.
 
-1. Buka spreadsheet, pilih tab yang mau diubah (`organisasi`, `mahasiswa`, `acara_gor`, atau `celah`).
+1. Buka spreadsheet, pilih tab yang mau diubah (`organisasi`, `prodi`, `direktorat`, `mahasiswa`, `acara_gor`, atau `celah`).
 2. Ubah isi sel, atau tambah baris baru di bawah baris terakhir dengan kolom yang sama.
 3. Tunggu sekitar 5 menit. Lalu buka situs dan tekan Ctrl + F5.
 

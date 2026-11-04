@@ -109,9 +109,11 @@
   }
 
   async function main() {
-    let org, mhs, gor, celah;
+    let org, mhs, gor, celah, prodi, dir;
     try {
-      [org, mhs, gor, celah] = await Promise.all([load('organisasi'), load('mahasiswa'), load('acara_gor'), load('celah')]);
+      [org, mhs, gor, celah, prodi, dir] = await Promise.all([load('organisasi'), load('mahasiswa'), load('acara_gor'), load('celah'), load('prodi'), load('direktorat')]);
+      // link situs prodi: tambahkan https:// otomatis
+      prodi.forEach((r) => { r.website_url = r.website ? 'https://' + r.website.replace(/^https?:\/\//, '') : ''; });
     } catch (e) {
       const g = $('#galat');
       g.hidden = false;
@@ -121,49 +123,81 @@
     mhs.forEach((r) => { r.jumlah = Number(r.jumlah); });
     const by = (id) => mhs.find((r) => r.id === id);
 
-    // ringkasan organisasi
-    const kelompok = ['Fakultas', 'Himpunan Prodi', 'LEM', 'UKM Universitas', 'UKM Fakultas', 'Organisasi Eksternal'];
-    const labels = {'Himpunan Prodi': 'Himpunan prodi', 'UKM Universitas': 'UKM universitas', 'UKM Fakultas': 'UKM fakultas', 'Organisasi Eksternal': 'Organisasi eksternal'};
+    // daftar yang bisa disaring: organisasi dan prodi
     const ok = (r) => r.status_ig === 'Terverifikasi';
     setText('#lede-org', nf.format(org.length));
     setText('#lede-ig', nf.format(org.filter(ok).length));
     const m02 = by('m02');
     if (m02) { setText('#lede-mhs', nf.format(m02.jumlah)); setText('#lede-periode', m02.periode); }
 
-    const state = {kel: 'Semua', q: ''};
-    const tiles = $('#tiles');
-    const tileEls = kelompok.map((k) => {
-      const rows = org.filter((r) => r.kelompok === k);
-      const b = mk('button', 'tile');
-      b.type = 'button';
-      b.setAttribute('aria-pressed', 'false');
-      b.append(mk('span', 'lab', labels[k] || k), mk('span', 'big', nf.format(rows.length)), mk('span', 'sub', nf.format(rows.filter(ok).length) + ' IG terverifikasi'));
-      b.addEventListener('click', () => { state.kel = state.kel === k ? 'Semua' : k; renderOrg(); });
-      tiles.append(b);
-      return [k, b];
+    function filterable(o) {
+      const state = {grup: 'Semua', q: ''};
+      const tilesBox = $(o.tiles), cariEl = $(o.cari), semuaEl = $(o.semua), emptyEl = $(o.kosong), table = $(o.table);
+      const tileEls = o.grup.map((g) => {
+        const rows = o.data.filter((r) => r[o.key] === g);
+        const b = mk('button', 'tile');
+        b.type = 'button';
+        b.setAttribute('aria-pressed', 'false');
+        b.append(mk('span', 'lab', (o.labels && o.labels[g]) || g), mk('span', 'big', nf.format(rows.length)));
+        if (o.sub) b.append(mk('span', 'sub', o.sub(rows)));
+        b.addEventListener('click', () => { state.grup = state.grup === g ? 'Semua' : g; render(); });
+        tilesBox.append(b);
+        return [g, b];
+      });
+      buildHead(table, o.cols);
+      function render() {
+        const q = state.q.trim().toLowerCase();
+        const rows = o.data.filter((r) => (state.grup === 'Semua' || r[o.key] === state.grup) &&
+          (!q || o.cari_di.map((k) => r[k]).join(' ').toLowerCase().includes(q)));
+        fillBody(table, o.cols, rows);
+        emptyEl.hidden = rows.length > 0;
+        tileEls.forEach(([g, b]) => b.setAttribute('aria-pressed', String(g === state.grup)));
+        semuaEl.hidden = state.grup === 'Semua' && !q;
+      }
+      cariEl.addEventListener('input', () => { state.q = cariEl.value; render(); });
+      semuaEl.addEventListener('click', () => { state.grup = 'Semua'; state.q = ''; cariEl.value = ''; render(); });
+      render();
+    }
+
+    filterable({
+      data: org, key: 'kelompok', grup: ['Fakultas', 'Himpunan Prodi', 'LEM', 'UKM Universitas', 'UKM Fakultas', 'Organisasi Eksternal'],
+      labels: {'Himpunan Prodi': 'Himpunan prodi', 'UKM Universitas': 'UKM universitas', 'UKM Fakultas': 'UKM fakultas', 'Organisasi Eksternal': 'Organisasi eksternal'},
+      sub: (rows) => nf.format(rows.filter(ok).length) + ' IG terverifikasi',
+      tiles: '#tiles', cari: '#cari', semua: '#semua', kosong: '#org-kosong', table: '#tabel-org',
+      cari_di: ['nama', 'kelompok', 'kategori', 'fakultas', 'ig_handle', 'catatan'],
+      cols: [
+        {key: 'id', label: 'ID'}, {key: 'kelompok', label: 'Kelompok'}, {key: 'nama', label: 'Nama'},
+        {key: 'kategori', label: 'Jenis'}, {key: 'fakultas', label: 'Fakultas'},
+        {key: 'ig_handle', label: 'Instagram', link: 'ig_url'}, {key: 'status_ig', label: 'Status IG', chip: true},
+        {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
+      ]
     });
 
-    const orgCols = [
-      {key: 'id', label: 'ID'}, {key: 'kelompok', label: 'Kelompok'}, {key: 'nama', label: 'Nama'},
-      {key: 'kategori', label: 'Jenis'}, {key: 'fakultas', label: 'Fakultas'},
+    filterable({
+      data: prodi, key: 'jenjang', grup: ['Sarjana', 'Sarjana Terapan', 'Diploma Tiga', 'Profesi', 'Magister', 'Doktor'],
+      labels: {'Sarjana Terapan': 'Sarjana terapan', 'Diploma Tiga': 'Diploma tiga'},
+      tiles: '#tiles-prodi', cari: '#cari-prodi', semua: '#semua-prodi', kosong: '#prodi-kosong', table: '#tabel-prodi',
+      cari_di: ['fakultas', 'jenjang', 'prodi', 'catatan'],
+      cols: [
+        {key: 'id', label: 'ID'}, {key: 'fakultas', label: 'Fakultas'}, {key: 'jenjang', label: 'Jenjang'},
+        {key: 'prodi', label: 'Program studi'}, {key: 'program_internasional', label: 'Program internasional'},
+        {key: 'website', label: 'Situs', link: 'website_url'},
+        {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
+      ]
+    });
+    setText('#prodi-tercatat', nf.format(prodi.length));
+    const m12p = by('m12');
+    if (m12p) setText('#prodi-resmi', nf.format(m12p.jumlah));
+
+    // direktorat
+    const dirCols = [
+      {key: 'id', label: 'ID'}, {key: 'nama', label: 'Direktorat'}, {key: 'peran', label: 'Fungsi'}, {key: 'kontak', label: 'Kontak'},
       {key: 'ig_handle', label: 'Instagram', link: 'ig_url'}, {key: 'status_ig', label: 'Status IG', chip: true},
-      {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
+      {key: 'peran_untuk_dopa', label: 'Kegunaan untuk Dopa'}, {key: 'sumber', label: 'Sumber', link: 'sumber_url'}, {key: 'catatan', label: 'Catatan'}
     ];
-    const tOrg = $('#tabel-org');
-    buildHead(tOrg, orgCols);
-    const semua = $('#semua'), cari = $('#cari');
-    function renderOrg() {
-      const q = state.q.trim().toLowerCase();
-      const rows = org.filter((r) => (state.kel === 'Semua' || r.kelompok === state.kel) &&
-        (!q || [r.nama, r.kelompok, r.kategori, r.fakultas, r.ig_handle, r.catatan].join(' ').toLowerCase().includes(q)));
-      fillBody(tOrg, orgCols, rows);
-      $('#org-kosong').hidden = rows.length > 0;
-      tileEls.forEach(([k, b]) => b.setAttribute('aria-pressed', String(k === state.kel)));
-      semua.hidden = state.kel === 'Semua' && !q;
-    }
-    cari.addEventListener('input', () => { state.q = cari.value; renderOrg(); });
-    semua.addEventListener('click', () => { state.kel = 'Semua'; state.q = ''; cari.value = ''; renderOrg(); });
-    renderOrg();
+    const tDir = $('#tabel-dir');
+    buildHead(tDir, dirCols);
+    fillBody(tDir, dirCols, dir);
 
     // mahasiswa
     const m11 = by('m11'), m10 = by('m10'), m05 = by('m05'), m12 = by('m12'), m13 = by('m13');
